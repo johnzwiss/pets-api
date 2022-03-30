@@ -1,5 +1,5 @@
 //PET -> has many toys and owner that is user
-
+const toySchema = require('./toy')
 const mongoose =  require('mongoose')
 
 const {Schema, model} = mongoose
@@ -22,6 +22,7 @@ const petSchema = new Schema (
             type: Boolean,
             required: true
         },
+        toys: [toySchema],
         owner:{ 
             type: Schema.Types.ObjectId,
             ref: 'User'
